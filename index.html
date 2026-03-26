@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mumbai Logistics Optimizer</title>
+
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin=""/>
+    
+    <link rel="stylesheet" href="https://unpkg.com/leaflet-routing-machine@latest/dist/leaflet-routing-machine.css" />
+
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <div class="container">
+        <div class="sidebar">
+            <h1>🚚 Logistics Optimizer</h1>
+            <p>An AOA project for finding the optimal delivery route in Mumbai.</p>
+
+            <div class="control-section">
+                <h2>Step 1: Choose Warehouse</h2>
+                <select id="warehouse-select">
+                    <option value="19.11,72.86">Andheri Central</option>
+                    <option value="18.91,72.81">Colaba Point</option>
+                    <option value="19.23,72.85">Borivali East</option>
+                </select>
+            </div>
+
+            <div class="control-section">
+                <h2>Step 2: Add Deliveries</h2>
+                <p>Click on the map to add up to 10 delivery locations.</p>
+                <ul id="delivery-list"></ul>
+                <button id="clear-button">Clear All Deliveries</button>
+            </div>
+
+            <div class="control-section">
+                <h2>Step 3: Generate Route</h2>
+                <button id="calculate-route-button">🚀 Find Optimal Route</button>
+            </div>
+
+            <div id="results" class="results-section hidden">
+                <h2>Results</h2>
+                <p><strong>Total Distance:</strong> <span id="total-distance"></span> km</p>
+                <p><strong>Estimated Time:</strong> <span id="total-time"></span> minutes</p>
+            </div>
+             <div id="spinner" class="spinner hidden"></div>
+        </div>
+
+        <div id="map"></div>
+    </div>
+
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+    
+    <script src="https://unpkg.com/leaflet-routing-machine@latest/dist/leaflet-routing-machine.js"></script>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
